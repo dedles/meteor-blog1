@@ -1,22 +1,26 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
+import '../imports/ui/body.js';
 
-import './main.html';
+// import { Meteor } from 'meteor/meteor';
+// import { Template } from 'meteor/templating';
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
+// import './main.html';
+// import '../imports/ui/blog.html';
+// import '../imports/api/blogs.js';
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
+// Template.blog.events({
+//   'submit #blogForm'(event) {
+//     event.preventDefault();
+//     const target = event.target;
+//     const title = target.title.value;
+//     const body = target.body.value;
+    
+//     Meteor.call('submitPost', title, body);
+    
+//   },
+// });
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
-});
+// Template.listBlogs.helpers({
+//   blogs() {
+//     return Blogs.find({});
+//   }
+// })
