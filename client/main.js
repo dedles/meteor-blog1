@@ -2,8 +2,9 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 
 import './main.html';
+// import './blog.html';
 
-
+import '../imports/ui/blog.html';
 
 Template.blog.events({
   'submit #blogForm'(event) {
@@ -16,3 +17,4 @@ Template.blog.events({
     
   },
 });
+
