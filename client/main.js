@@ -1,4 +1,5 @@
-import '../imports/ui/body.js';
+import '../imports/startups/account-config.js';
+// import '../imports/ui/body.js';
 
 // import { Meteor } from 'meteor/meteor';
 // import { Template } from 'meteor/templating';
