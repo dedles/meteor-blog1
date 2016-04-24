@@ -83,6 +83,17 @@ h6, .h6 {
   font-weight: 500;
   color: #cdddeb !important;
 }
+
+.login {
+  list-style: none;
+  margin-right: 90px;
+}
+
+.dropdown-toggle {
+  color: #cdddeb !important;
+  list-style: none;
+}
+
 .blog-nav-item:hover,
 .blog-nav-item:focus {
   color: #fff;
