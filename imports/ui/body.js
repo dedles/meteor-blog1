@@ -1,10 +1,17 @@
+import {Meteor} from 'meteor/meteor';
 import { Template } from 'meteor/templating';
+import {ReactiveDict} from 'meteor/reactive-dict';
 
 import { Blogs } from '../api/blogs.js';
 
 import './blog.js'; 
 import './body.html';
  
+Template.body.onCreated(function bodyOnCreated() {
+  this.state = new ReactiveDict();
+  Meteor.subscribe('blogs');
+});
+
 Template.body.helpers({
   blogs() {
     return Blogs.find({}, {sort: {createdAt: -1}});
@@ -21,17 +28,8 @@ Template.body.events({
     const title = target.title.value;
     const body = target.body.value;
     
-    // Meteor.call('submitPost', title, body);
-    // title = '';
-    // body = '';
     // Insert a blog into the collection
-    Blogs.insert({
-      title,
-      body,
-      createdAt: new Date(), // current time
-      owner: Meteor.userId(),
-      username: Meteor.user().username,
-    });
+    Meteor.call('blogs.insert', title, body);
  
     // Clear form
     target.title.value = '';

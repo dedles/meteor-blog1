@@ -1,17 +1,23 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 
-import { Blogs } from '../api/blogs.js';
 
 import './blog.html';
 
+
+
+Template.blog.helpers({
+  isOwner(){
+    return this.owner === Meteor.userId();
+  }
+})
+
+
+
+
+
 Template.blog.events({
-//   'click .toggle-checked'() {
-//     // Set the checked property to the opposite of its current value
-//     Tasks.update(this._id, {
-//       $set: { checked: ! this.checked },
-//     });
-//   },
   'click .delete'() {
-    Blogs.remove(this._id);
+    Meteor.call('blogs.remove', this._id);
   },
 });
