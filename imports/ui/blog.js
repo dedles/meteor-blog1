@@ -6,6 +6,9 @@ import './blog.html';
 Template.blog.helpers({
   isOwner(){
     return this.owner === Meteor.userId();
+  },
+  formattedTime(){
+    return this.createdAt.toDateString(); 
   }
 });
 
