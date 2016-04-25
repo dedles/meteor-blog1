@@ -12,6 +12,6 @@ Template.blog.events({
 //     });
 //   },
   'click .delete'() {
-    Tasks.remove(this._id);
+    Blogs.remove(this._id);
   },
 });
