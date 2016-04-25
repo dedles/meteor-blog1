@@ -1,10 +1,17 @@
+import {Meteor} from 'meteor/meteor';
 import { Template } from 'meteor/templating';
+import {ReactiveDict} from 'meteor/reactive-dict';
 
 import { Blogs } from '../api/blogs.js';
 
 import './blog.js'; 
 import './body.html';
  
+Template.body.onCreated(function bodyOnCreated() {
+  this.state = new ReactiveDict();
+  Meteor.subscribe('blogs');
+});
+
 Template.body.helpers({
   blogs() {
     return Blogs.find({}, {sort: {createdAt: -1}});

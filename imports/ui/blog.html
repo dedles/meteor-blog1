@@ -1,6 +1,8 @@
 <template name="blog">
     <div class="row">
-        <button class="delete">&times;</button>
+        {{#if isOwner}}
+            <button class="delete">&times;</button>
+        {{/if}}
         <h2 class="text-center">{{title}}</h2>
         <p class="text-center"><strong>{{username}}</strong> - {{createdAt}}</p>
 

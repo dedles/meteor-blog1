@@ -4,6 +4,12 @@ import { check } from 'meteor/check';
 
 export const Blogs = new Mongo.Collection('blogs');
 
+if(Meteor.isServer){
+    Meteor.publish('blogs', function blogsPublication(){
+        return Blogs.find();
+    });
+}
+
 Meteor.methods({
   'blogs.insert'(title, body ){
       check(title, String);
