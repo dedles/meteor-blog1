@@ -30,6 +30,11 @@ Meteor.methods({
   },
   'blogs.remove'(blogId){
       check(blogId, String);
+      const blog = Blogs.findOne(blogId);
+        if (blog.owner !== Meteor.userId()) {
+            // If the blog is private, make sure only the owner can delete it
+            throw new Meteor.Error('not-authorized');
+        }
       Blogs.remove(blogId);
   },
 })
