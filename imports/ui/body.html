@@ -1,38 +1,11 @@
 <body>
-    <!--<nav class="navbar navbar-default navbar-static-top blog-masthead">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand blog-nav-item" href="#">Meteor Blog</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a class="blog-nav-item" href="#">Home</a></li>
-            <li><a class="blog-nav-item" href="#about">About</a></li>
-            <li><a class="blog-nav-item" href="#contact">Contact</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            {{> loginButtons}} 
-          </ul>
-        </div>
-      </div>
-    </nav>-->
     <div class="blog-masthead">
-      <div class="container">
+        <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">Home</a>
-          <a class="blog-nav-item" href="#">About</a>
-          <a class="blog-nav-item" href="#">Contact</a>
-          <a class="blog-nav-item login pull-right" href="#">{{> loginButtons}}</a>
-          <!--{{> loginButtons}}-->
-          
+            <a class="blog-nav-item active" href="#">Meteor Blog</a>
+            <a class="blog-nav-item login pull-right" href="#">{{> loginButtons}}</a>        
         </nav>
-      </div>
+        </div>
     </div>
 
     <div class="container">
@@ -73,4 +46,16 @@
             {{>blog}}
         {{/each}}
     </div>
+    
+
+    <footer class="blog-footer">
+      <p>Single-page blogging app built with Meteor and Bootstrap for styling.</p>
+      <p>
+        See <a href="https://github.com/dedles/meteor-blog1" target="_blank">here</a> for see the project repository.
+      </p>
+      <p>
+          Built by Chris: <a href="mailto:cdtded1212@gmail.com">cdtded1212@gmail.com</a>. <a href="https://github.com/dedles" target="_blank">Github</a> 
+      </p>
+    </footer>
+    
 </body>
