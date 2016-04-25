@@ -1,6 +1,6 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 
-import { Blogs } from '../api/blogs.js';
 
 import './blog.html';
 
@@ -12,6 +12,6 @@ Template.blog.events({
 //     });
 //   },
   'click .delete'() {
-    Blogs.remove(this._id);
+    Meteor.call('blogs.remove', this._id);
   },
 });

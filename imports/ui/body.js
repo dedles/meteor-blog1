@@ -21,17 +21,8 @@ Template.body.events({
     const title = target.title.value;
     const body = target.body.value;
     
-    // Meteor.call('submitPost', title, body);
-    // title = '';
-    // body = '';
     // Insert a blog into the collection
-    Blogs.insert({
-      title,
-      body,
-      createdAt: new Date(), // current time
-      owner: Meteor.userId(),
-      username: Meteor.user().username,
-    });
+    Meteor.call('blogs.insert', title, body);
  
     // Clear form
     target.title.value = '';
