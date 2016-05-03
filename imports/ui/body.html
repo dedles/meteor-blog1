@@ -1,6 +1,5 @@
-<body>
-    {{> navbar}}
-    
+
+<template name="home">
     <div class="container">
         <div class="divide30"></div>
         <div class="row">
@@ -18,21 +17,9 @@
             {{>blog}}
         {{/each}}
     </div>
-    
-    {{>footer}}
-</body>
-
-<template name="footer">
-    <footer class="blog-footer">
-      <p>Single-page blogging app built with Meteor and Bootstrap for styling.</p>
-      <p>
-        See <a href="https://github.com/dedles/meteor-blog1" target="_blank">here</a> for see the project repository.
-      </p>
-      <p>
-          Built by Chris: <a href="mailto:cdtded1212@gmail.com">cdtded1212@gmail.com</a>. <a href="https://github.com/dedles" target="_blank">Github</a> 
-      </p>
-    </footer>
 </template>
+
+
 
 <template name="blogform">
     <div class="row">
@@ -59,7 +46,7 @@
     <hr>
 </template>
 
-<template name="navbar">
+<template name="main">
     <div class="blog-masthead">
         <div class="container">
         <nav class="blog-nav">
@@ -68,4 +55,26 @@
         </nav>
         </div>
     </div>
+    {{> yield}}
+    {{>footer}}
+</template>
+
+<template name="aboutPage">
+    <h1>About</h1>
+</template>
+
+<template name="contactPage">
+    <h1>Contact</h1>
+</template>
+
+<template name="footer">
+    <footer class="blog-footer">
+      <p>Single-page blogging app built with Meteor and Bootstrap for styling.</p>
+      <p>
+        See <a href="https://github.com/dedles/meteor-blog1" target="_blank">here</a> for see the project repository.
+      </p>
+      <p>
+          Built by Chris: <a href="mailto:cdtded1212@gmail.com">cdtded1212@gmail.com</a>. <a href="https://github.com/dedles" target="_blank">Github</a> 
+      </p>
+    </footer>
 </template>

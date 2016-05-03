@@ -12,7 +12,7 @@ Template.body.onCreated(function bodyOnCreated() {
   Meteor.subscribe('blogs');
 });
 
-Template.body.helpers({
+Template.home.helpers({
   blogs() {
     return Blogs.find({}, {sort: {createdAt: -1}});
   },
@@ -21,7 +21,7 @@ Template.body.helpers({
   }
 });
 
-Template.body.events({
+Template.home.events({
   'submit #blogForm'(event) {
     event.preventDefault();
     const target = event.target;
