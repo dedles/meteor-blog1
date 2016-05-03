@@ -1,15 +1,20 @@
 
 <template name="home">
     <div class="container">
-        <div class="divide30"></div>
-        <div class="row">
+
+        <div class="blog-header">
+            <h2 class="blog-title text-center">Meteor Blogging App</h2>
+            <br>
+            <p class="lead blog-description text-center">Total Posts: {{blogCount}}</p>
+        </div>
+        <!--<div class="row">
             <h1 class="text-center">Meteor Blogging App</h1>
             <div class="row">
                 <p class="text-center">Total Posts: {{blogCount}}</p>    
             </div>
             <hr>
-            <br>
-        </div>
+            <br>-->
+        <!--</div>-->
         {{#if currentUser }}
             {{>blogform}}
         {{/if}}
@@ -50,7 +55,9 @@
     <div class="blog-masthead">
         <div class="container">
         <nav class="blog-nav">
-            <a class="blog-nav-item active" href="#">Meteor Blog</a>
+            <a class="blog-nav-item active" href="{{pathFor route='home'}}">Meteor Blog</a>>
+            <a class="blog-nav-item" href="{{pathFor route='contact'}}">Contact</a>
+            <a class="blog-nav-item" href="{{pathFor route='about'}}">About</a>
             <a class="blog-nav-item login pull-right" href="#">{{> loginButtons}}</a>        
         </nav>
         </div>
@@ -60,21 +67,43 @@
 </template>
 
 <template name="aboutPage">
-    <h1>About</h1>
+    <div class="container">
+        <div class="divide30"></div>
+        <div class="blog-header">
+            <h1 class="text-center blog-title">About</h1>
+        </div>
+        <div class="row">
+            <div class="blog-main">
+                <div class="blog-post">
+                    <p>This App was built by Chris Taylor. You can check out my Github <a href="https://github.com/dedles" target="_blank">here</a>.</p>
+                    <p>Please see <a href="https://github.com/dedles/meteor-blog1" target="_blank">here</a> for see the project repository.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <template name="contactPage">
-    <h1>Contact</h1>
+    <div class="container">
+        <div class="divide30"></div>
+        <div class="blog-header">
+            <h1 class="text-center blog-title">Contact</h1>
+        </div>
+        <div class="row">
+            <div class="blog-main">
+                <div class="blog-post">
+                    <p>Contact me by email at: <a href="mailto:cdtded1212@gmail.com">cdtded1212@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <template name="footer">
     <footer class="blog-footer">
       <p>Single-page blogging app built with Meteor and Bootstrap for styling.</p>
       <p>
-        See <a href="https://github.com/dedles/meteor-blog1" target="_blank">here</a> for see the project repository.
-      </p>
-      <p>
-          Built by Chris: <a href="mailto:cdtded1212@gmail.com">cdtded1212@gmail.com</a>. <a href="https://github.com/dedles" target="_blank">Github</a> 
+          Built by Chris: <a href="mailto:cdtded1212@gmail.com">cdtded1212@gmail.com</a>. 
       </p>
     </footer>
 </template>

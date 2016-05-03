@@ -20,6 +20,12 @@
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
+  margin-bottom: 150px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
 }
 
 h1, .h1,
@@ -198,8 +204,14 @@ h6, .h6 {
 /*
  * Footer
  */
+ 
 
 .blog-footer {
+  
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  
   padding: 40px 0;
   color: #999;
   text-align: center;
@@ -216,7 +228,7 @@ h6, .h6 {
 
 /*styling for blog live edit function*/
 
-.blog-input{
+.blog-input-body{
     border:none;
     font-size: 100%;
     padding:0.15em;
@@ -224,18 +236,18 @@ h6, .h6 {
     width: 100%;
     resize: none;
 }
-.blog-input:hover{
+.blog-input-body:hover{
     background-color: #f9f9f9;
     cursor:pointer; 
 }
 
-.blog-input:focus{
+.blog-input-body:focus{
     background-color: #f9f9f9;
     cursor:default;
     outline:none;
 }
 
-.blog-title{
+.blog-input-title{
     border:none;
     font-size: 30px;
     padding:0.15em;
@@ -244,14 +256,17 @@ h6, .h6 {
     margin-top: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: normal;
-    color: #333;    
+    color: #333;
+ 
+    margin-bottom: 5px;
+    font-size: 40px;
 }
-.blog-title:hover{
+.blog-input-title:hover{
     background-color: #f9f9f9;
     cursor:pointer; 
 }
 
-.blog-title:focus{
+.blog-input-title:focus{
     background-color: #f9f9f9;
     cursor:default;
     outline:none;

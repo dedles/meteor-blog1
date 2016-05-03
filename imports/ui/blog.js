@@ -14,7 +14,7 @@ Template.blog.helpers({
 
 // Have blog textarea fit the size of its value
 Template.blog.onRendered(function(){
-  $(".blog-input").height( $(".blog-input")[0].scrollHeight)
+  $(".blog-input-body").height( $(".blog-input-body")[0].scrollHeight)
 });
 
 

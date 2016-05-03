@@ -31,6 +31,13 @@ Router.route('/', {
     template: 'home'
 });
 
+Router.route('/contact', {
+    template: 'contactPage'
+});
+Router.route('/about', {
+    template: 'aboutPage'
+});
+
 Router.configure({
     layoutTemplate: 'main'
 });
