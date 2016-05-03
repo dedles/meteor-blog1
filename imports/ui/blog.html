@@ -2,12 +2,14 @@
     <div class="row">
         {{#if isOwner}}
             <button class="delete">&times;</button>
-            <button class="btn btn-sm btn-default edit">Edit</button>
+            <input name="blogTitleEdit" class="blog-title center-block" type="text" value="{{title}}">
+            <p class="text-center"><strong>{{username}}</strong> - {{formattedTime}}</p>
+            <textarea name="blogBodyEdit" class="blog-input" value="{{body}}" rows="10"></textarea>
+        {{else}}
+            <h2 class="text-center">{{title}}</h2>
+            <p class="text-center"><strong>{{username}}</strong> - {{formattedTime}}</p>
+            <p class="blog-body"> {{body}} </p>
         {{/if}}
-        <h2 class="text-center">{{title}}</h2>
-        <p class="text-center"><strong>{{username}}</strong> - {{formattedTime}}</p>
-
-        <p> {{body}} </p>
         <hr>
     </div>
 </template>

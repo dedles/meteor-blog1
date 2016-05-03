@@ -19,7 +19,6 @@ Meteor.methods({
     if (! Meteor.userId()){
         throw new Meteor.Error('not-authorized');
     }
-    
     Blogs.insert({
         title,
         body,
@@ -37,4 +36,24 @@ Meteor.methods({
         }
       Blogs.remove(blogId);
   },
-})
+  'blogs.updateTitle'(blogId, titleValue){
+      check(blogId, String);
+      check(titleValue, String);
+      const currentUser = Meteor.userId();
+      const blog = Blogs.findOne(blogId);
+      if(blog.owner !== currentUser){
+          throw new Meteor.Error('not-authorized');
+      }
+      Blogs.update({ _id: blogId, owner: currentUser }, {$set: { title: titleValue }});
+  },
+  'blogs.updateBody'(blogId, bodyValue){
+      check(blogId, String);
+      check(bodyValue, String);
+      const currentUser = Meteor.userId();
+      const blog = Blogs.findOne(blogId);
+      if(blog.owner !== currentUser){
+          throw new Meteor.Error('not-authorized');
+      }
+      Blogs.update({ _id: blogId, owner: currentUser }, {$set: { body: bodyValue }});
+  }
+});
