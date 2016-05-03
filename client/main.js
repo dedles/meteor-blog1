@@ -25,3 +25,19 @@ import '../imports/ui/body.js';
 //     return Blogs.find({});
 //   }
 // })
+
+Router.route('/', {
+    name: 'home',
+    template: 'home'
+});
+
+Router.route('/contact', {
+    template: 'contactPage'
+});
+Router.route('/about', {
+    template: 'aboutPage'
+});
+
+Router.configure({
+    layoutTemplate: 'main'
+});

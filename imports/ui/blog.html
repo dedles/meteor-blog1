@@ -1,13 +1,18 @@
 <template name="blog">
-    <div class="row">
-        {{#if isOwner}}
-            <button class="delete">&times;</button>
-        {{/if}}
-        <h2 class="text-center">{{title}}</h2>
-        <p class="text-center"><strong>{{username}}</strong> - {{formattedTime}}</p>
-
-        <p> {{body}} </p>
-        <hr>
+    <div class="blog-main">
+        <div class="blog-post">
+            {{#if isOwner}}
+                <button class="delete">&times;</button>
+                <input name="blogTitleEdit" class="blog-input-title center-block" type="text" value="{{title}}">
+                <p class="blog-post-meta text-center">{{formattedTime}} By <strong>{{username}}</strong></p>
+                <textarea name="blogBodyEdit" class="blog-input-body" value="{{body}}" rows="10"></textarea>
+            {{else}}
+                <h2 class="blog-post-title text-center">{{title}}</h2>
+                <p class="blog-post-meta text-center">{{formattedTime}} By <strong>{{username}}</strong></p>
+                <p class="blog-body"> {{body}} </p>
+            {{/if}}
+            <hr>
+        </div>
     </div>
 </template>
 

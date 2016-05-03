@@ -1,61 +1,109 @@
-<body>
-    <div class="blog-masthead">
-        <div class="container">
-        <nav class="blog-nav">
-            <a class="blog-nav-item active" href="#">Meteor Blog</a>
-            <a class="blog-nav-item login pull-right" href="#">{{> loginButtons}}</a>        
-        </nav>
-        </div>
-    </div>
 
+<template name="home">
     <div class="container">
-        <div class="divide30"></div>
-        <div class="row">
+
+        <div class="blog-header">
+            <h2 class="blog-title text-center">Meteor Blogging App</h2>
+            <br>
+            <p class="lead blog-description text-center">Total Posts: {{blogCount}}</p>
+        </div>
+        <!--<div class="row">
             <h1 class="text-center">Meteor Blogging App</h1>
             <div class="row">
                 <p class="text-center">Total Posts: {{blogCount}}</p>    
             </div>
             <hr>
-            <br>
-        </div>
+            <br>-->
+        <!--</div>-->
         {{#if currentUser }}
-            <div class="row">
-                <form id="blogForm" class="form-horizontal">
-                    <div class="form-group">
-                        <label for="blogTitle" class="col-sm-2 control-label">Blog Title</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="title" class="form-control" id="blogTitle" placeholder="Title">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">Blog Content</label>
-                        <div class="col-sm-10">
-                            <textarea name="body" id="blogBody" class="form-control" rows="10"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-lg btn-primary">Create Post</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        <hr>
+            {{>blogform}}
         {{/if}}
         {{#each blogs}}
             {{>blog}}
         {{/each}}
     </div>
-    
+</template>
 
+
+
+<template name="blogform">
+    <div class="row">
+        <form id="blogForm" class="form-horizontal">
+            <div class="form-group">
+                <label for="blogTitle" class="col-sm-2 control-label">Blog Title</label>
+                <div class="col-sm-10">
+                    <input type="text" name="title" class="form-control" id="blogTitle" placeholder="Title">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Blog Content</label>
+                <div class="col-sm-10">
+                    <textarea name="body" id="blogBodyPost" class="form-control" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-lg btn-primary">Create Post</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <hr>
+</template>
+
+<template name="main">
+    <div class="blog-masthead">
+        <div class="container">
+        <nav class="blog-nav">
+            <a class="blog-nav-item active" href="{{pathFor route='home'}}">Meteor Blog</a>
+            <a class="blog-nav-item" href="{{pathFor route='contact'}}">Contact</a>
+            <a class="blog-nav-item" href="{{pathFor route='about'}}">About</a>
+            <a class="blog-nav-item login pull-right" href="#">{{> loginButtons}}</a>        
+        </nav>
+        </div>
+    </div>
+    {{> yield}}
+    {{>footer}}
+</template>
+
+<template name="aboutPage">
+    <div class="container">
+        <div class="divide30"></div>
+        <div class="blog-header">
+            <h1 class="text-center blog-title">About</h1>
+        </div>
+        <div class="row">
+            <div class="blog-main">
+                <div class="blog-post">
+                    <p>This App was built by Chris Taylor. You can check out my Github <a href="https://github.com/dedles" target="_blank">here</a>.</p>
+                    <p>Please see <a href="https://github.com/dedles/meteor-blog1" target="_blank">here</a> for see the project repository.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="contactPage">
+    <div class="container">
+        <div class="divide30"></div>
+        <div class="blog-header">
+            <h1 class="text-center blog-title">Contact</h1>
+        </div>
+        <div class="row">
+            <div class="blog-main">
+                <div class="blog-post">
+                    <p>Contact me by email at: <a href="mailto:cdtded1212@gmail.com">cdtded1212@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="footer">
     <footer class="blog-footer">
       <p>Single-page blogging app built with Meteor and Bootstrap for styling.</p>
       <p>
-        See <a href="https://github.com/dedles/meteor-blog1" target="_blank">here</a> for see the project repository.
-      </p>
-      <p>
-          Built by Chris: <a href="mailto:cdtded1212@gmail.com">cdtded1212@gmail.com</a>. <a href="https://github.com/dedles" target="_blank">Github</a> 
+          Built by Chris: <a href="mailto:cdtded1212@gmail.com">cdtded1212@gmail.com</a>. 
       </p>
     </footer>
-    
-</body>
+</template>
