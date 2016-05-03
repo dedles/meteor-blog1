@@ -210,17 +210,14 @@ h6, .h6 {
   margin-bottom: 0;
 }
 
-/*.blog-body{
-  font-family: "Times New Roman";
-  font-size: 100%;
-  padding:0.15em;  
-}*/
+.blog-body{
+    white-space: pre-line;  
+}
 
 /*styling for blog live edit function*/
 
 .blog-input{
     border:none;
-    font-family: "Times New Roman";
     font-size: 100%;
     padding:0.15em;
     white-space: pre-line;

@@ -30,12 +30,15 @@ Template.blog.events({
     var documentId = this._id;
     var titleValue = $(event.target).val();
     Meteor.call('blogs.updateTitle', this._id, titleValue );
-    // Todos.update({ _id: documentId }, {$set: { name: todoItem }});
   },
   'keyup [name=blogBodyEdit]': function(event){
-    var documentId = this._id;
-    var bodyValue = $(event.target).val();
-    Meteor.call('blogs.updateBody', this._id, bodyValue);
-    // Todos.update({ _id: documentId }, {$set: { name: todoItem }});
+    if(event.which == 27){
+        $(event.target).blur();
+    }else{
+      var documentId = this._id;
+      var bodyValue = $(event.target).val();
+      Meteor.call('blogs.updateBody', this._id, bodyValue);
+      // console.log(event.which);
+    }
   }
 });
