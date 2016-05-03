@@ -48,14 +48,21 @@
             </div>
         </form>
     </div>
+    <br>
+    <div class="col-sm-9 col-sm-offset-3">
+        <i>If you are a Post's author, just click on the text to make any edits.</i>
+        <br>
+    </div>
+    <br>
     <hr>
+
 </template>
 
 <template name="main">
     <div class="blog-masthead">
         <div class="container">
         <nav class="blog-nav">
-            <a class="blog-nav-item active" href="{{pathFor route='home'}}">Meteor Blog</a>
+            <a class="blog-nav-item" href="{{pathFor route='home'}}">Meteor Blog</a>
             <a class="blog-nav-item" href="{{pathFor route='contact'}}">Contact</a>
             <a class="blog-nav-item" href="{{pathFor route='about'}}">About</a>
             <a class="blog-nav-item login pull-right" href="#">{{> loginButtons}}</a>        

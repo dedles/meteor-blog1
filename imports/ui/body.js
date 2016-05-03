@@ -12,6 +12,7 @@ Template.body.onCreated(function bodyOnCreated() {
   Meteor.subscribe('blogs');
 });
 
+
 Template.home.helpers({
   blogs() {
     return Blogs.find({}, {sort: {createdAt: -1}});
